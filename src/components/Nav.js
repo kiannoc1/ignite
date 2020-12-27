@@ -7,6 +7,7 @@ import logo from "../img/logo.svg";
 import { fetchSearch } from "../actions/gamesAction";
 import { useDispatch } from "react-redux";
 
+import { fadeIn } from "../animation";
 const Nav = () => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
@@ -25,7 +26,7 @@ const Nav = () => {
     dispatch({ type: "CLEAR_SEARCHED" });
   };
   return (
-    <SyledNav>
+    <SyledNav variants={fadeIn} initial="hidden" animate="show">
       <Logo onClick={clearSearch}>
         <img src={logo} alt="logo" />
         <h1> Ignite</h1>
